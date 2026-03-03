@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Insert Webpage</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+        }
+
+        .box {
+            width: 450px;
+            margin: 80px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+        }
+
+        select,
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        button {
+            margin-top: 15px;
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h2 align="center">Insert Webpage</h2>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <label>Topic</label>
+            <select name="topicname">
+                {% for To in QLTO %}
+                <option value="{{To.topic_name}}">{{To.topic_name}}</option>
+                {% endfor %}
+            </select>
+
+            <input type="text" name="name" placeholder="Website name">
+            <input type="text" name="url" placeholder="Website URL">
+
+            <button type="submit">Save</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

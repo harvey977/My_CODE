@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<center>
+    <table border="3">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Webpage Name</th>
+        <th>Webpage URL</th>
+    </tr>
+
+    {% for webpage in QLWO %}
+    <tr>
+        <td>{{ webpage.id }}</td>
+        <td>{{ webpage.topic_name.topic_name }}</td>
+        <td>{{ webpage.name }}</td>
+        <td>{{ webpage.url }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</center>
+</body>
+</html>

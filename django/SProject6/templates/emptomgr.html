@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Emp To Mgr join</h1>
+        <table border="3px">
+            <tr>
+                <th>empno</th>
+                <th>ename</th>
+                <th>sal</th>
+                <th>mgrno</th>
+                <th>mgrname</th>
+                <th>mgr</th>
+                <th>sal</th>
+            </tr>
+            {% for EMO in QSLEMO  %}
+           <tr>
+            <td>{{ EMO.empno }}</td>
+            <td>{{ EMO.ename }}</td>
+            <td>{{ EMO.sal }}</td>
+            <td>{{ EMO.mgr.empno }}</td>
+            <td>{{ EMO.mgr.ename }}</td>
+            <td>{{ EMO.mgr.sal }}</td>
+           </tr>
+        
+        {% endfor %}
+        </table>
+
+        
+    </center>
+</body>
+</html>

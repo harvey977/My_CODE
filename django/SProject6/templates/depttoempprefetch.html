@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Department to Employee Prefetch</h1>
+        {% for DEO in QSLDEO %}
+        {% if DEO.emp_set.all %}
+        <h2>{{ DEO.dname }},{{DEO.dloc}}</h2>
+        <table border="3px">
+            
+            <tr>
+                <th>empname</th>
+                <th>empno</th>
+                <th>sal</th>
+            </tr>
+            {% for EO in DEO.emp_set.all %}
+            <tr>
+                <td>{{ EO.ename }}</td>
+                <td>{{ EO.empno }}</td>
+                <td>{{ EO.sal }}</td>
+            </tr>
+            {% endfor %}
+            
+
+        </table>
+        {% endif %}
+        {% endfor %}
+    </center>
+    
+</body>
+</html>

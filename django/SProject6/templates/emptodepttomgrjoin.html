@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>emp to dept to mgr join</h1>
+        <table border="3px">
+            <tr>
+                <th>empname</th>
+                <th>empno</th>
+                <th>empsal</th>
+                <th>deptno</th>
+                <th>dname</th>
+                <th>dloc</th>
+                <th>mgrname</th>
+                <th>mgrempno</th>
+                <th>mgrsal</th>
+            </tr>
+            {% for EDMO in QSLEDMO %}
+            <tr>
+                <td> {{ EDMO.ename }} </td>
+                <td> {{ EDMO.empno }}</td>
+                <td> {{ EDMO.sal }}</td>
+                <td> {{ EDMO.deptno.deptno }}</td>
+                <td> {{ EDMO.deptno.dname }}</td>
+                <td> {{ EDMO.deptno.dloc }}</td>
+                <td> {{ EDMO.mgr.ename }}</td>
+                <td> {{ EDMO.mgr.empno}}</td>
+                <td> {{ EDMO.mgr.sal}}</td>
+            </tr>
+            {% endfor %}
+        
+        </table>
+    </center>
+</body>
+</html>

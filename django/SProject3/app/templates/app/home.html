@@ -1,0 +1,10 @@
+
+<h2>Student List</h2>
+<a href="/add/">Add Student</a> |
+<a href="/logout/">Logout</a>
+<hr>
+{% for s in students %}
+{{s.name}} | {{s.age}} | {{s.email}}
+<a href="/edit/{{s.id}}/">Edit</a>
+<a href="/delete/{{s.id}}/">Delete</a><br>
+{% endfor %}

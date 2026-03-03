@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Insert Topic</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #eef;
+        }
+
+        .box {
+            width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+        }
+
+        button {
+            margin-top: 10px;
+            width: 100%;
+            padding: 10px;
+            background: green;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h2 align="center">Insert Topic</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="Topic" placeholder="Enter Topic">
+            <button type="submit">Save</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

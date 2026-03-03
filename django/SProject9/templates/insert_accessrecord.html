@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+<center>
+<h2>Insert Access Record</h2>
+
+<form method="POST">
+{% csrf_token %}
+
+<select name="name">
+{% for w in QLWO %}
+<option value="{{w.id}}">{{w.name}}</option>
+{% endfor %}
+</select><br><br>
+
+<input type="text" name="author" placeholder="Author"><br><br>
+<input type="date" name="date"><br><br>
+
+<input type="submit">
+</form>
+</center>
+</body>
+</html>

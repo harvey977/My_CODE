@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Show Data</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #fafafa;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 40px auto;
+        }
+
+        th,
+        td {
+            border: 1px solid #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background: #333;
+            color: white;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Topics</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+        {% for t in topics %}
+        <tr>
+            <td>{{t.id}}</td>
+            <td>{{t.topic_name}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Webpages</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>URL</th>
+            <th>Topic</th>
+        </tr>
+        {% for w in webpages %}
+        <tr>
+            <td>{{w.id}}</td>
+            <td>{{w.name}}</td>
+            <td>{{w.url}}</td>
+            <td>{{w.topic}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Access Records</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Webpage</th>
+            <th>Author</th>
+            <th>Date</th>
+        </tr>
+        {% for a in access %}
+        <tr>
+            <td>{{a.id}}</td>
+            <td>{{a.name}}</td>
+            <td>{{a.author}}</td>
+            <td>{{a.date}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+
+</html>
