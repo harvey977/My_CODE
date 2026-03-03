@@ -1,0 +1,71 @@
+{% extends 'dummy.html' %}
+
+{% block title %}
+
+<title>Home</title>
+{% endblock %}
+
+{% block body_block %}
+
+<style>
+    .hero-section{
+        height:90vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        background:linear-gradient(to right,#4e73df,#1cc88a);
+        color:white;
+    }
+
+    .hero-box{
+        background:rgba(255,255,255,0.1);
+        padding:40px;
+        border-radius:20px;
+        backdrop-filter:blur(10px);
+        box-shadow:0 15px 35px rgba(0,0,0,0.3);
+    }
+
+    .hero-box h1{
+        font-size:40px;
+        font-weight:bold;
+    }
+
+    .hero-box p{
+        font-size:18px;
+        margin-top:15px;
+    }
+
+    .hero-btn{
+        margin-top:25px;
+        padding:10px 25px;
+        border-radius:30px;
+        font-weight:bold;
+    }
+</style>
+
+<div class="hero-section">
+
+```
+<div class="hero-box">
+
+    {% if user.is_authenticated %}
+        <h1>Welcome {{ user.username }} 👋</h1>
+        <p>You are successfully logged in.</p>
+
+        <a href="{% url 'profile_display' %}" class="btn btn-light hero-btn">View Profile</a>
+
+    {% else %}
+        <h1>Welcome to Our Website 🌐</h1>
+        <p>Please Login or Register to continue</p>
+
+        <a href="{% url 'user_login' %}" class="btn btn-light hero-btn">Login</a>
+        <a href="{% url 'registration' %}" class="btn btn-warning hero-btn">Register</a>
+    {% endif %}
+
+</div>
+```
+
+</div>
+
+{% endblock %}

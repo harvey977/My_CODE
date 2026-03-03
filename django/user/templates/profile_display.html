@@ -1,0 +1,42 @@
+{% extends 'dummy.html' %}
+
+{% block title %}
+<title>Profile Display</title>
+{% endblock %}
+
+{% block body_block %}
+
+<div class="container mt-5">
+    <div class="card shadow-lg p-4" style="max-width: 700px; margin: auto; border-radius: 15px;">
+        
+        <div class="text-center">
+            <h2 class="mb-3 text-primary">👤 {{ UO.username }}'s Profile</h2>
+        </div>
+
+        <div class="text-center mb-4">
+            {% if PO.profile_pic %}
+                <img src="{{ PO.profile_pic.url }}" 
+                     alt="Profile Picture" 
+                     class="img-fluid rounded-circle shadow"
+                     style="width: 250px; height: 250px; object-fit: cover;">
+            {% else %}
+                <p class="text-danger">No Profile Picture Uploaded</p>
+            {% endif %}
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h5>📧 Email</h5>
+                <p class="text-muted">{{ UO.email }}</p>
+            </div>
+
+            <div class="col-md-6">
+                <h5>🏠 Address</h5>
+                <p class="text-muted">{{ PO.address }}</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
