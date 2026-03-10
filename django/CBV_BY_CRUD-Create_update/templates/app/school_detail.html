@@ -1,0 +1,31 @@
+{% extends 'app/dummy.html' %}
+
+
+{% block title %}
+    <title>Sc Detail Page</title>
+{% endblock %}
+
+{% block body_block %}
+    <center>
+        <h1>Detail Information of {{scobject.scname}} </h1>
+
+        <h2>Name of School is {{scobject.scname}}</h2>
+        
+        <h2>principal of School is {{scobject.scprincipal}}</h2>
+        
+        <h2>location of School is {{scobject.sclocation}}</h2>
+
+
+        <h1>Student Details are</h1>
+
+        {% for sto in scobject.students.all %}
+            <h2>name of student is {{sto.stname}}</h2>
+            <h2>age of student is {{sto.stage}}</h2>
+            
+        {% endfor %}
+
+
+
+<a href="{% url 'SchoolUpdate' pk=scobject.pk %}" class="btn btn-danger">Update School</a>
+    </center>
+{% endblock %}
